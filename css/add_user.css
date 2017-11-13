@@ -1,0 +1,97 @@
+#main{
+    width: 400px;
+    background-color: rgba(4,150,255,0.15);
+    left: 450px;
+    border-radius: 5px 5px;
+    height:400px;
+    position: relative; 
+    top: 40px;
+    padding-left: 20px;
+    padding-right:20px;
+    border:solid lightblue;
+}
+
+.heading{
+    position: relative;
+    left:470px;
+    top:50px;
+    font-weight: bold;
+    font-size: xx-large;
+    color: maroon;
+    text-align: center;
+}
+
+.label{
+    color: maroon;
+    font-weight: bold;
+    font-size: large;
+    position: relative;
+    top: 20px;
+    left: 50px;
+}
+
+.note{
+
+    position:relative;
+    top: 15px;
+    left: 50px;
+    color:red;
+    display: none;
+    font-weight: bold;
+    font-family: 10px;
+}
+
+
+.button{
+    background-color: black;
+    border-radius: 15px 15px;
+    width: 150px;
+    height: 35px;
+    color: lightblue;
+    position: relative;
+    font-weight:bold;
+    left: 120px;
+    top: 10px;
+    border: solid maroon;
+}
+
+.input{
+    width: 300px;
+    height:30px;
+    border-radius: 5px 5px;
+    position: relative;
+    top: 5px;
+    left: 50px;
+    border:solid lightblue;
+}
+
+body{
+    width:400px;
+}
+
+.table{
+    font-family: "Times New Roman";
+    border:solid lightblue;
+    position: relative;
+    top:200px;
+    left:500px;
+    font-size: 18px;
+}
+
+th{
+    font-size:20px;
+    background-color: lightblue;
+    color:navy;
+}
+
+td{
+    color: maroon;
+    background-color:lightgrey;
+}
+
+h1{
+    position:relative;
+    top:150px;
+    left:500px; 
+    text-align:center;
+}

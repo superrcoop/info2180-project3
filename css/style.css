@@ -1,0 +1,65 @@
+#main{
+    width: 400px;
+    background-color: rgba(4,150,255,0.15);
+    left: 450px;
+    border-radius: 5px 5px;
+    height:300px;
+    position: relative; 
+    top: 50px;
+    padding-left: 20px;
+    padding-right:20px;
+    border:solid lightblue;
+}
+
+.heading{
+    position: relative;
+    left:470px;
+    top:50px;
+    font-weight: bold;
+    font-size: xx-large;
+    color: white;
+    text-align: center;
+}
+
+header{
+    width:400px;
+    background-color:black;
+}
+
+.label{
+    color: gold;
+    font-weight: bold;
+    font-size: large;
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+
+.button{
+    background-color: black;
+    border-radius: 15px 15px;
+    width: 150px;
+    height: 35px;
+    color: white;
+    position: relative;
+    left: 120px;
+    top: 70px;
+    border: solid lightblue;
+}
+
+.input{
+    width: 300px;
+    height:30px;
+    border-radius: 5px 5px;
+    position: relative;
+    top: 50px;
+    left: 50px;
+    border:solid lightblue;
+}
+
+body{
+    background: url('/images/digital.jpg');
+    background-repeat: no-repeat;
+    background-size: 1400px 700px;
+    width:400px;
+}

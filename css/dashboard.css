@@ -1,0 +1,162 @@
+header{
+    width:1275px;
+    background-color: maroon;
+    margin-left:30px;
+    border-radius: 15px 15px 0px 0px;
+    height:100px;
+}
+
+aside{
+    width:195px;
+    background-color: maroon;
+    float:left;
+    margin-left:30px;
+    height:290px;
+}
+
+section{
+    width:1080px;
+    position: relative;
+    left: 225px;
+    top:-290px;
+}
+
+body{
+    width:1300px;
+}
+
+.button{
+    border-radius: 15px 15px;
+    background-color: black;
+    width: 150px;
+    height: 35px;
+    color: lightblue;
+    border: solid lightblue;
+    text-align: center;
+}
+
+
+#logout{
+    position:relative;
+    left:1100px;
+    top:-40px;
+}
+
+#compose{
+    position:relative;
+    top:10px;
+    margin-left:10px;
+}
+
+.options{
+    margin-left: 25px;
+    font-family: "Times New Roman";
+    font-size: 20px;
+    color:lightblue;
+    text-decoration: underline;
+}
+
+.newmessage{
+    position: absolute;    
+    border:solid maroon;
+    border-radius: 25px 25px 5px 5px;
+    top:200px;
+    width:500px;
+    height: 460px;
+    background-color: lightblue;
+}
+
+.messagehead{
+    text-align: left;
+    font-size: medium;
+    font-weight: bold;
+    font-family: "Times New Roman";
+    margin: 12px;
+    color:navy;
+    border-bottom:solid maroon;
+}
+
+.fields{
+    width: 470px;
+    height: 40px;
+    margin-left: 12px;
+    position: relative;
+    border-radius: 5px 5px;
+    border:solid maroon;
+    padding-left:20px;
+}
+
+.sendbutton{
+    background-color: black;
+    border-radius: 15px 15px;
+    width: 100px;
+    height: 35px;
+    color: lightblue;
+    border: solid maroon;
+    position: relative;
+    top:-27px;
+    left:12px;
+    text-align:center;
+}
+
+.closebutton{
+    background-color: black;
+    border-radius: 32px;
+    width: 80px;
+    height: 35px;
+    color: lightblue;
+    border: solid maroon;
+    position: relative;
+    top:20px;
+    left:400px;
+    text-align:center;
+}
+
+.textarea{
+    width:470px;
+    border: solid maroon;
+    margin-left:12px;
+    position: relative;
+    margin: 12px;
+    overflow: scroll;
+}
+
+.table{
+    font-family: "Times New Roman";
+    border:solid lightblue;
+    font-size: 18px;
+    width:inherit;
+    border-collapse: collapse;
+}
+
+th{
+    font-size:20px;
+    background-color: lightblue;
+    color:navy;
+    text-align: left;
+}
+
+tr{
+    color: maroon;
+}
+
+.odd{
+    background-color:lightblue;
+}
+
+.even{
+    background-color:white;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+
+h1{
+    top:20px;
+    left:0px;
+    color:lightblue;
+    text-align: center;
+    position: relative;
+}
