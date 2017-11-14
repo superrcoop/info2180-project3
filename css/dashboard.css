@@ -14,11 +14,32 @@ aside{
     height:290px;
 }
 
-section{
+#messages{
     width:1080px;
     position: relative;
     left: 225px;
     top:-290px;
+}
+
+#outmessages{
+    width:1080px;
+    position: relative;
+    left: 225px;
+    top:-290px;
+    display:none;
+}
+
+#currmessage{
+    width:1070px;
+    position: relative;
+    display:none;
+    float: right;
+    background:lightblue;
+}
+
+.innertext{
+    font-family: Arial;
+    font-size:16px;
 }
 
 body{

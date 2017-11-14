@@ -19,8 +19,9 @@
 		else{
 			$class='"odd '.$read.'"';
 		}
-		$function='"readupdate('.$row['id'].',this)"';
-		$doc.= "<tr class=".$class."onclick=".$function."><td>".$row['sendername']."</td><td>".$row['subject'].'- '.$row['preview']."</td><td>".date_format(date_create($row['date_sent']),'M-d-y')."</td>";
+		$type="'inbox'";
+		$function='"readupdate('.$row['id'].',this,'.$type.')"';
+		$doc.= "<tr class=".$class." onclick=".$function."><td>".$row['sendername']."</td><td>".$row['subject'].'- '.$row['preview']."</td><td>".date_format(date_create($row['date_sent']),'M-d-y')."</td>";
 		$count++;
 	}
 	$doc.='</tbody></table>';

@@ -18,8 +18,8 @@
         </header>
         <aside>
             <input id="compose" class="button" value="COMPOSE"/> 
-            <p class="options" onclick="getMessages()">Inbox</p>
-            <p class="options" onclick="">Outbox</p>
+            <p id="inbox" class="options" onclick="showinbox()">Inbox</p>
+            <p id="outbox" class="options" onclick="showoutbox()">Outbox</p>
             <?php 
                 //if($_SESSION['username']=='admin'){
                   //  echo "<a class='options' href='add_user.html'>Add User</a>";
@@ -27,7 +27,10 @@
             ?>   
         </aside>
         <section id="messages">
-            
+        </section>
+        <section id="outmessages">
+        </section>
+        <section id="currmessage">
         </section>
     </body>
 </html>

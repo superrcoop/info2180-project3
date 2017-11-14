@@ -5,6 +5,7 @@ window.onload=function(){
     let p=[0,800,250,600,500,400,700,300,350,200];
 
     getMessages();
+    outMessages();
 
     compose.addEventListener('click',function(){
         if(start>0){
@@ -114,6 +115,27 @@ function send_message(number){
     }    
 }
 
+function viewMessage(id,type){
+    let divout=document.getElementById('outmessages');
+    let divless=document.getElementById('messages');
+    divless.style.display='none';
+    divout.style.display='none';
+    let xttp = new XMLHttpRequest();
+    let params='message_id='+id+'&type='+type;
+    let divmess=document.getElementById('currmessage');
+    divmess.style.display='block';
+    xttp.onreadystatechange = function(){
+        if(xttp.readyState===XMLHttpRequest.DONE && xttp.status===200){
+            let response=xttp.responseText;
+            divmess.innerHTML=response;
+        }
+    }
+    xttp.open('POST','/messages/view_message.php',true);
+    xttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xttp.send(params);
+}
+
+
 function getMessages(){
     let xttp = new XMLHttpRequest();
     let divmess=document.getElementById('messages');
@@ -129,7 +151,42 @@ function getMessages(){
     xttp.send();    
 }
 
-function readupdate(id,value){
+function outMessages(){
+    let xttp = new XMLHttpRequest();
+    let divmess=document.getElementById('outmessages');
+    xttp.onreadystatechange = function(){
+        if(xttp.readyState===XMLHttpRequest.DONE && xttp.status===200){
+            let response=xttp.responseText;
+            divmess.innerHTML=response;
+            setTimeout(outMessages, 15000);
+        }
+    }
+    xttp.open('GET','/messages/out_messages.php',true);
+    xttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xttp.send();    
+}
+
+
+function showoutbox(){
+  let divout=document.getElementById('outmessages');
+  let divmess=document.getElementById('messages');
+  let divcurr=document.getElementById('currmessage');
+  divmess.style.display='none';
+  divcurr.style.display='none';
+  divout.style.display='block';
+  
+}
+
+function showinbox(){
+    let divout=document.getElementById('outmessages');
+    let divmess=document.getElementById('messages');
+    let divcurr=document.getElementById('currmessage');
+    divmess.style.display='block';
+     divcurr.style.display='none';
+    divout.style.display='none';
+}    
+
+function readupdate(id,value,type){
     let params='messageid='+id;
     if(value.classList.contains('bold')){
         value.classList.remove('bold');
@@ -142,4 +199,5 @@ function readupdate(id,value){
         xttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xttp.send(params);
     }
+    viewMessage(id,type);
 }
