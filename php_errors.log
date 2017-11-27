@@ -912,3 +912,66 @@ Stack trace:
 #0 /home/ubuntu/workspace/messages/view_message.php(8): PDO->query('SELECT recipien...')
 #1 {main}
   thrown in /home/ubuntu/workspace/messages/view_message.php on line 8
+[27-Nov-2017 02:51:10 UTC] PHP Fatal error:  Call to a member function query() on a non-object in /home/ubuntu/workspace/messages/add_message.php on line 14
+[27-Nov-2017 02:51:10 UTC] PHP Stack trace:
+[27-Nov-2017 02:51:10 UTC] PHP   1. {main}() /home/ubuntu/workspace/messages/add_message.php:0
+[27-Nov-2017 02:51:10 UTC] PHP   2. insert_message() /home/ubuntu/workspace/messages/add_message.php:18
+[27-Nov-2017 02:52:38 UTC] PHP Fatal error:  Call to a member function query() on a non-object in /home/ubuntu/workspace/messages/add_message.php on line 14
+[27-Nov-2017 02:52:38 UTC] PHP Stack trace:
+[27-Nov-2017 02:52:38 UTC] PHP   1. {main}() /home/ubuntu/workspace/messages/add_message.php:0
+[27-Nov-2017 02:52:38 UTC] PHP   2. insert_message() /home/ubuntu/workspace/messages/add_message.php:18
+[27-Nov-2017 02:53:13 UTC] PHP Fatal error:  Call to a member function query() on a non-object in /home/ubuntu/workspace/messages/add_message.php on line 14
+[27-Nov-2017 02:53:13 UTC] PHP Stack trace:
+[27-Nov-2017 02:53:13 UTC] PHP   1. {main}() /home/ubuntu/workspace/messages/add_message.php:0
+[27-Nov-2017 02:53:13 UTC] PHP   2. insert_message() /home/ubuntu/workspace/messages/add_message.php:18
+[27-Nov-2017 02:54:19 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''recipients_ids','subject','4body','sender_id','date_sent') VALUES ('boom','bang' at line 1' in /home/ubuntu/workspace/messages/add_message.php:15
+Stack trace:
+#0 /home/ubuntu/workspace/messages/add_message.php(15): PDO->query('INSERT INTO mes...')
+#1 /home/ubuntu/workspace/messages/add_message.php(19): insert_message('boom', 'bang', 'blast ', NULL)
+#2 {main}
+  thrown in /home/ubuntu/workspace/messages/add_message.php on line 15
+[27-Nov-2017 02:55:07 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''recipients_ids','subject','body','sender_id','date_sent') VALUES ('boom','me ',' at line 1' in /home/ubuntu/workspace/messages/add_message.php:15
+Stack trace:
+#0 /home/ubuntu/workspace/messages/add_message.php(15): PDO->query('INSERT INTO mes...')
+#1 /home/ubuntu/workspace/messages/add_message.php(19): insert_message('boom', 'me ', 'testing?', NULL)
+#2 {main}
+  thrown in /home/ubuntu/workspace/messages/add_message.php on line 15
+[27-Nov-2017 02:57:28 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''recipient_ids','subject','body','sender_id','date_sent') VALUES ('b','bang','he' at line 1' in /home/ubuntu/workspace/messages/add_message.php:15
+Stack trace:
+#0 /home/ubuntu/workspace/messages/add_message.php(15): PDO->query('INSERT INTO mes...')
+#1 /home/ubuntu/workspace/messages/add_message.php(19): insert_message('b', 'bang', 'hey', NULL)
+#2 {main}
+  thrown in /home/ubuntu/workspace/messages/add_message.php on line 15
+[27-Nov-2017 03:00:37 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''recipient_ids','subject','body','sender_id','date_sent') VALUES ('hylton','me '' at line 1' in /home/ubuntu/workspace/messages/add_message.php:15
+Stack trace:
+#0 /home/ubuntu/workspace/messages/add_message.php(15): PDO->query('INSERT messages...')
+#1 /home/ubuntu/workspace/messages/add_message.php(19): insert_message('hylton', 'me ', 'testing', NULL)
+#2 {main}
+  thrown in /home/ubuntu/workspace/messages/add_message.php on line 15
+[27-Nov-2017 03:02:34 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''recipient_ids','subject','body','sender_id','date_sent') VALUES ('hylton','me '' at line 1' in /home/ubuntu/workspace/messages/add_message.php:15
+Stack trace:
+#0 /home/ubuntu/workspace/messages/add_message.php(15): PDO->query('INSERT messages...')
+#1 /home/ubuntu/workspace/messages/add_message.php(19): insert_message('hylton', 'me ', 'testing', NULL)
+#2 {main}
+  thrown in /home/ubuntu/workspace/messages/add_message.php on line 15
+[27-Nov-2017 03:05:05 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''recipient_ids','subject','body','sender_id','date_sent') VALUES ('hylton','me '' at line 1' in /home/ubuntu/workspace/messages/add_message.php:12
+Stack trace:
+#0 /home/ubuntu/workspace/messages/add_message.php(12): PDO->query('INSERT messages...')
+#1 {main}
+  thrown in /home/ubuntu/workspace/messages/add_message.php on line 12
+[27-Nov-2017 03:16:46 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''subject','body','sender_id','date_sent') VALUES ('me ','test
+','',$now)' at line 1' in /home/ubuntu/workspace/messages/add_message.php:12
+Stack trace:
+#0 /home/ubuntu/workspace/messages/add_message.php(12): PDO->query('INSERT messages...')
+#1 {main}
+  thrown in /home/ubuntu/workspace/messages/add_message.php on line 12
+[27-Nov-2017 03:18:07 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''recipient_ids','subject','body','sender_id','date_sent') VALUES ('hylton','me '' at line 1' in /home/ubuntu/workspace/messages/add_message.php:12
+Stack trace:
+#0 /home/ubuntu/workspace/messages/add_message.php(12): PDO->query('INSERT messages...')
+#1 {main}
+  thrown in /home/ubuntu/workspace/messages/add_message.php on line 12
+[27-Nov-2017 03:19:54 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '03:11:54)' at line 1' in /home/ubuntu/workspace/messages/add_message.php:12
+Stack trace:
+#0 /home/ubuntu/workspace/messages/add_message.php(12): PDO->query('INSERT messages...')
+#1 {main}
+  thrown in /home/ubuntu/workspace/messages/add_message.php on line 12
