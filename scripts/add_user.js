@@ -17,7 +17,7 @@ function testblank(input,number){
 
 function testpassword(password,number){
 	let m=document.getElementById('label'+number);
-	let patt="/([a-zA-Z0-9]{8,})/";
+	let patt="/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}/";
 	if(password.match(patt)===true){
 		m.style.display="none";
 		document.getElementById('add_button').disabled=false;
