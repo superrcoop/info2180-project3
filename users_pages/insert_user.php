@@ -17,16 +17,15 @@
 	$password = md5($_POST['password']);
 	
 	$sql->execute();
-	echo "New record created successsfully";
+	$response= "New User created successsfully";
 
 ?>
-
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="css/add_user.css">
+		<link rel="stylesheet" type="text/css" href="/css/add_user.css">
 	</head>
 	<body>
-		<h1><?php //echo $response?></h1>
+		<h1><?php echo $response?></h1>
 		<table class="table">
 			<thead>
 				<th>Username</th>
@@ -38,6 +37,8 @@
 				<td><?php echo $firstname ?></td>
 				<td><?php echo $lastname ?></td>
 			</tbody>
-		</table>	
+		</table>
+		<a href="/dashboard.php">Back to Messages</a>
+		<a href="logout.php">Logout</a>
 	</body>
 </html>
