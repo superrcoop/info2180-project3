@@ -975,3 +975,32 @@ Stack trace:
 #0 /home/ubuntu/workspace/messages/add_message.php(12): PDO->query('INSERT messages...')
 #1 {main}
   thrown in /home/ubuntu/workspace/messages/add_message.php on line 12
+[03-Dec-2017 23:08:51 UTC] PHP Warning:  include(config.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/users_pages/insert_user.php on line 3
+[03-Dec-2017 23:08:51 UTC] PHP Stack trace:
+[03-Dec-2017 23:08:51 UTC] PHP   1. {main}() /home/ubuntu/workspace/users_pages/insert_user.php:0
+[03-Dec-2017 23:08:51 UTC] PHP Warning:  include(): Failed opening 'config.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/users_pages/insert_user.php on line 3
+[03-Dec-2017 23:08:51 UTC] PHP Stack trace:
+[03-Dec-2017 23:08:51 UTC] PHP   1. {main}() /home/ubuntu/workspace/users_pages/insert_user.php:0
+[03-Dec-2017 23:08:51 UTC] PHP Fatal error:  Call to a member function prepare() on a non-object in /home/ubuntu/workspace/users_pages/insert_user.php on line 6
+[03-Dec-2017 23:08:51 UTC] PHP Stack trace:
+[03-Dec-2017 23:08:51 UTC] PHP   1. {main}() /home/ubuntu/workspace/users_pages/insert_user.php:0
+[03-Dec-2017 23:11:46 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'c9.user' doesn't exist' in /home/ubuntu/workspace/users_pages/insert_user.php:18
+Stack trace:
+#0 /home/ubuntu/workspace/users_pages/insert_user.php(18): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/users_pages/insert_user.php on line 18
+[03-Dec-2017 23:13:51 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'c9.user' doesn't exist' in /home/ubuntu/workspace/users_pages/insert_user.php:18
+Stack trace:
+#0 /home/ubuntu/workspace/users_pages/insert_user.php(18): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/users_pages/insert_user.php on line 18
+[03-Dec-2017 23:18:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'c9.user' doesn't exist' in /home/ubuntu/workspace/users_pages/insert_user.php:18
+Stack trace:
+#0 /home/ubuntu/workspace/users_pages/insert_user.php(18): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/users_pages/insert_user.php on line 18
+[03-Dec-2017 23:22:52 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'c9.user' doesn't exist' in /home/ubuntu/workspace/users_pages/insert_user.php:18
+Stack trace:
+#0 /home/ubuntu/workspace/users_pages/insert_user.php(18): PDOStatement->execute()
+#1 {main}
+  thrown in /home/ubuntu/workspace/users_pages/insert_user.php on line 18
