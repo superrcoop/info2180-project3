@@ -8,7 +8,6 @@ function testblank(input,number){
 		m.style.display="block";
 		let main = document.getElementById('main');
 		main.style.height='auto';
-		console.log(m);
 	}
 	else{
 		m.style.display="none";
@@ -18,14 +17,14 @@ function testblank(input,number){
 
 function testpassword(password,number){
 	let m=document.getElementById('label'+number);
-	let patt="/^(?=.*[0-9])(?=.*[a-zA-Z])[a-zA-Z0-9]{8,}$/";
-	if(password.match(patt)!==true){
+	let patt="/([a-zA-Z0-9]{8,})/";
+	if(password.match(patt)===true){
+		m.style.display="none";
+		document.getElementById('add_button').disabled=false;
+	}
+	if(password.match(patt)===false){
 		m.style.display="block";
 		let main = document.getElementById('main');
 		main.style.height='auto';
-	}
-	else{
-		m.style.display="none";
-		document.getElementById('add_button').disabled=false;
 	}
 }

@@ -7,12 +7,11 @@ $subject=$_POST['subject'];
 $body=$_POST['body'];
 $senderid=$_SESSION['userid'];
 
+$now=date("Y-m-d h:m:s");
+$date=$now;
+$stmt2=$pdo->query("INSERT messages (recipient_ids,subject,body,sender_id,date_sent) VALUES ('$recipients','$subject','$body','$senderid','$date')");
 
-function insert_message($recipients,$subject,$body,$senderid){
-	//Insert Sql code to add messages to table
-	//test if the data has been inserted the echo the statement below
-	echo "Your message has been sent";
+if($stmt2->rowCount()>0){
+ echo "Your message has been sent";   
 }
-
-insert_message($recipients,$subject,$body,$senderid);
 ?>

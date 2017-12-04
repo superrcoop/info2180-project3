@@ -12,7 +12,7 @@ CREATE TABLE users (
 INSERT INTO users (username, firstname, lastname, password) VALUES('admin', 'Jordan', 'Cooper', md5('password123'));
 INSERT INTO users (username, firstname, lastname, password) VALUES('mcphersonr', 'Ramone', 'McPherson', md5('password123'));
 INSERT INTO users (username, firstname, lastname, password) VALUES('hyltonk', 'Khadejah', 'Hylton', md5('password123'));
-INSERT INTO users (username, firstname, lastname, password) VALUES('williamsa', 'Ackeam', 'Williams', md5('password123'));
+INSERT INTO users (username, firstname, lastname, password) VALUES('williamsa', 'Akeam', 'Williams', md5('password123'));
 
 -- Messages
 DROP TABLE IF EXISTS messages;

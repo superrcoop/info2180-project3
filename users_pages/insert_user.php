@@ -1,10 +1,23 @@
 <?php
 
-/*Things to be done
+	include('../config.php');
 
-Santize the input from the form
-Add the data to the database
-let the user know what has been added by replacing the strings in the <td> tags with variables from  the database */
+	// prepare sql and bund parameters
+	$sql = $pdo->prepare("INSERT INTO users (firstname,lastname,username,password) 
+	VALUES(:firstname,:lastname,:username,:password)");
+	$sql->bindParam(':firstname',$firstname);
+	$sql->bindParam(':lastname',$lastname);
+	$sql->bindParam(':username',$username);
+	$sql->bindParam(':password',$password);
+	
+	//insert data
+	$firstname = filter_var($_POST['firstname'], FILTER_SANITIZE_STRING);
+	$lastname = filter_var($_POST['lastname'], FILTER_SANITIZE_STRING);
+	$username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+	$password = md5($_POST['password']);
+	
+	$sql->execute();
+	echo "New record created successsfully";
 
 ?>
 
@@ -16,16 +29,14 @@ let the user know what has been added by replacing the strings in the <td> tags 
 		<h1><?php //echo $response?></h1>
 		<table class="table">
 			<thead>
-				<th>UserId</th>
 				<th>Username</th>
 				<th>Firstname</th>
 				<th>Lastname</th>
 			</thead>
 			</tbody>
-				<td>UserId<?php ?></td>
-				<td>Username<?php ?></td>
-				<td>Firstname<?php ?></td>
-				<td>Lastname<?php ?></td>
+				<td><?php echo $username ?></td>
+				<td><?php echo $firstname ?></td>
+				<td><?php echo $lastname ?></td>
 			</tbody>
 		</table>	
 	</body>
