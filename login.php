@@ -1,25 +1,29 @@
 <?php
-/*Things to be done sanitize the user input and verify the user
-Use sql and php to do this
 
-if(isset($_POST['login'])){
-    $_POST['username'];
-    $_POST['password'];
+session_start();
+include('config.php');
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $username = test_input($_POST["username"]);
+  $password = md5(test_input($_POST["password"]));
+}
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
 }
 
-*/
+echo $username;;
+echo $password;
 
-
-
-
-/*session_start();
-$_SESSION['username']=
-$_SESSION['fname']=
-$_SESSION['lname']=
-$_SESSION['username']=
-
-header(location:dashboard.php);
-*/
-
+$sql="SELECT * FROM users WHERE username ='$username' and password ='$password'";
+$stmt=$pdo->query($sql);
+if($stmt->rowCount()>0){
+    echo "success";
+}
+else{
+    echo "failure";
+}
 
 ?>
