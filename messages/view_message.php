@@ -2,14 +2,12 @@
 	session_start();
 	include('../config.php');
 	$messageid=$_POST['message_id'];
-	$type=$_POST['type'];
-	$userid=2;
+	$type=(string)$_POST['type'];
 	$stmt = $pdo->query("SELECT recipient_ids,sender_id, subject, body, date_sent from messages where id=".$messageid." order by date_sent");
 	$users = $pdo->query("SELECT * from users");
 	$userinfo =[];
-	while($type=$users->fetch(PDO::FETCH_ASSOC)){
-		$userinfo[$type["id"]]=$type['firstname'].' '.$type['lastname'];
-
+	while($row2=$users->fetch(PDO::FETCH_ASSOC)){
+		$userinfo[$row2['id']]=$row2['firstname'].' '.$row2['lastname'];
 	}
 	$doc='';
 	$class='';
@@ -22,11 +20,14 @@
     		
 		}
 		$sender=$userinfo[$row['sender_id']];
-		if($type=='outbox'){
-			$doc.="<h3>RECIPIENTS: ".$recipients."</h3>";
-		}
-		else{
-			$doc.="<h3>SENT BY: ".$sender."</h3>";
+		
+		switch ($type) {
+		    case "inbox":
+		        $doc.="<h3>SENT BY: ".$sender."</h3>";;
+		        break;
+		    case "outbox":
+		        $doc.="<h3>RECIPIENTS: ".$recipients."</h3>";
+		        break;
 		}
 		
 		$doc.="<h3>SUBJECT: ".$row['subject']."</h3>".
