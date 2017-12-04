@@ -2,7 +2,7 @@
 	session_start();
 	include('../config.php');
 	$userid=2;
-	$stmt = $pdo->query("SELECT concat(firstname,' ',lastname) as sendername, messages.id, subject, body, LEFT(body,30) as preview, IF(messages_read.date_read is NULL,'bold','text') as mread, date_sent, messages_read.reader_id,messages_read.date_read from messages left join messages_read on messages.id=message_id left join users on users.id=sender_id where recipient_ids like '%$userid%' order by date_sent");
+	$stmt = $pdo->query("SELECT concat(firstname,' ',lastname) as sendername, messages.id, subject, body, LEFT(body,30) as preview, IF(messages_read.date_read is NULL,'bold','text') as mread, date_sent, messages_read.reader_id,messages_read.date_read from messages left join messages_read on messages.id=message_id left join users on users.id=sender_id where recipient_ids like '%$userid%' order by date_sent desc LIMIT 10");
 	$count=0;
 	$doc= "<table class='table'>";
 	$doc.="<thead>

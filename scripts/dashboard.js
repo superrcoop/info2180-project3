@@ -1,27 +1,17 @@
 window.onload=function(){
     let compose=document.getElementById('compose');
     let start=1;
-    let end=1;
-    let p=[0,800,250,600,500,400,700,300,350,200];
+    let p=[800,250,600,500,400,700,300,350,200];
 
     getMessages();
     outMessages();
 
     compose.addEventListener('click',function(){
-        if(start>0){
-            createNewMessage(p[start],start);
-        }
+        let random=Math.floor((Math.random()*8)+0);
+        let position= p[random];
+        createNewMessage(position,start);
         start++;
-        if(start===10){
-            end=2;
-            alert('Close all the other windows then double click the compose button or refresh the page');
-        }
     });
-    compose.addEventListener('dblclick',function(){
-        if(end==2){
-            start=0;
-        }
-    })
 }
 
 function closeMessageBox(id){
@@ -127,6 +117,7 @@ function viewMessage(id,type){
     xttp.onreadystatechange = function(){
         if(xttp.readyState===XMLHttpRequest.DONE && xttp.status===200){
             let response=xttp.responseText;
+            divmess.innerHTML='';
             divmess.innerHTML=response;
         }
     }
@@ -143,7 +134,7 @@ function getMessages(){
         if(xttp.readyState===XMLHttpRequest.DONE && xttp.status===200){
             let response=xttp.responseText;
             divmess.innerHTML=response;
-            setTimeout(getMessages, 15000);
+            setTimeout(getMessages, 30000);
         }
     }
     xttp.open('GET','/messages/get_messages.php',true);
@@ -158,7 +149,7 @@ function outMessages(){
         if(xttp.readyState===XMLHttpRequest.DONE && xttp.status===200){
             let response=xttp.responseText;
             divmess.innerHTML=response;
-            setTimeout(outMessages, 15000);
+            setTimeout(outMessages, 30000);
         }
     }
     xttp.open('GET','/messages/out_messages.php',true);

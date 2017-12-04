@@ -21,8 +21,7 @@
 		$recipients='';
 		$receivers=explode(',',$row['recipient_ids']);
 		foreach ($receivers as $value){
-    		$recipients.=$userinfo[$value].", ";
-    		
+    		$recipients.=$userinfo[$value]." ";
 		}
 		if($count%2==0){
 			$class="even";
@@ -31,7 +30,7 @@
 			$class="odd";
 		}
 		$function='viewMessage('.$row['id'].',"outbox")';
-		$doc.= "<tr class=".$class." onclick=".$function."><td>".$recipients."</td><td>".$row['subject'].'- '.$row['preview']."</td><td>".date_format(date_create($row['date_sent']),'M-d-y')."</td>";
+		$doc.= "<tr class=".$class." onclick=".$function."><td>".substr($recipients,0,10).',...'."</td><td>".$row['subject'].'- '.$row['preview']."</td><td>".date_format(date_create($row['date_sent']),'M-d-y')."</td>";
 		$count++;
 	}
 	$doc.='</tbody></table>';
