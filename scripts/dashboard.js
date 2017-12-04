@@ -20,13 +20,14 @@ function closeMessageBox(id){
 
 
 function createNewMessage(leftpos,number){
+    
+    
     let newmessage=document.createElement('DIV');
     newmessage.setAttribute('id','mbox'+number);
     newmessage.classList.add('newmessage');
     let p=document.createElement('P');
     p.appendChild(document.createTextNode('New Message'));
     p.classList.add('messagehead');
-    
     
     let cbutton= document.createElement('BUTTON');
     cbutton.appendChild(document.createTextNode('Close'));
@@ -50,7 +51,8 @@ function createNewMessage(leftpos,number){
     input1.setAttribute('placeholder','To');
     input1.setAttribute('id','to'+number);
     input1.classList.add('fields');
-
+    input1.style.width=360+'px';
+    
     let input2=document.createElement('INPUT');
     input2.setAttribute('type','text');
     input2.setAttribute('name','subject');
@@ -72,6 +74,7 @@ function createNewMessage(leftpos,number){
 
 
     form.append(input1);
+    getContacts(form,number);
     form.append(input2);
     form.append(txtarea);
     newmessage.appendChild(form);
@@ -157,6 +160,49 @@ function outMessages(){
     xttp.send();    
 }
 
+function getContacts(form,number){
+    let xttp = new XMLHttpRequest();
+    xttp.onreadystatechange = function(){
+        if(xttp.readyState===XMLHttpRequest.DONE && xttp.status===200){
+            let contacts=JSON.parse(xttp.responseText);
+            let select = document.createElement("SELECT");
+            select.setAttribute("id","name"+number);
+            select.classList.add('fields');
+            let nullvalue=document.createElement('option');
+            nullvalue.appendChild(document.createTextNode("Contacts"));
+            nullvalue.setAttribute("value","");
+            select.appendChild(nullvalue);
+            for (let key in contacts) {
+                if (contacts.hasOwnProperty(key)) {
+                    let opt=document.createElement("option");
+                    let value=contacts[key]['username'];
+                    opt.setAttribute("value",value);
+                    opt.appendChild(document.createTextNode(contacts[key]['name']));
+                    select.appendChild(opt);
+                }
+            }
+            select.style.top=-355+'px';
+            select.style.width=100+'px';
+            select.style.left=370+'px';
+            select.addEventListener('change',function(){
+                let tobox=document.getElementById('to'+number);
+                console.log('2',number);
+                if(tobox.value===""){
+                    tobox.value=select.value;
+                    console.log(tobox.value);
+                }
+                else{
+                    let newtext=tobox.value;
+                    tobox.value=newtext+','+select.value;
+                }
+            });
+            form.append(select);
+        }
+    }
+    xttp.open('GET','/messages/get_contacts.php',true);
+    xttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xttp.send();
+}
 
 function showoutbox(){
   let divout=document.getElementById('outmessages');
