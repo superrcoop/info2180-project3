@@ -1,8 +1,8 @@
 <?php
 	session_start();
 	include('../config.php');
-	$userid=2;
-	$stmt = $pdo->query("SELECT messages.id,recipient_ids, subject, body, LEFT(body,30) as preview, date_sent from messages where sender_id=".$userid." order by date_sent");
+	$userid=$_SESSION['userid'];
+	$stmt = $pdo->query("SELECT messages.id,recipient_ids, subject, body, LEFT(body,30) as preview, date_sent from messages where sender_id=".$userid." order by date_sent DESC");
 	$users = $pdo->query("SELECT * from users");
 	$userinfo =[];
 	while($type=$users->fetch(PDO::FETCH_ASSOC)){

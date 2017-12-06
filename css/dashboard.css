@@ -3,7 +3,7 @@ header{
     background-color: maroon;
     margin-left:30px;
     border-radius: 15px 15px 0px 0px;
-    height:100px;
+    height:200px;
 }
 
 aside{
@@ -59,8 +59,8 @@ body{
 
 #logout{
     position:relative;
-    left:1100px;
-    top:-40px;
+    left:10px;
+    top:-70px;
 }
 
 #compose{
@@ -174,7 +174,7 @@ tr{
 }
 
 
-h1{
+h1,h2{
     top:20px;
     left:0px;
     color:lightblue;

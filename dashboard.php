@@ -1,30 +1,28 @@
 <?php 
-    //session_start();
+    session_start();
+    if($_SESSION['username']===null){
+        echo header('location:index.php');
+    }
 ?>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+        <link rel="stylesheet" type="text/css" href="css/dashboard.css"> 
         <script src="scripts/dashboard.js" type="text/javascript"></script>
     </head>
     <body>
         <header>
-            <h1>Cheapo Mail
+            <h1 id="greetings">Cheapo Mail
                 </br>Good day
-                <?php 
-                   // echo $_SESSION['fname'].' '.$_SESSION['lname'];
-                ?>
+                <?php print $_SESSION['fname'].' '.$_SESSION['lname']?>
             </h1>
-            <input id="logout" class="button" value="LOGOUT"/>
+            <h2 id="username" value="<?php print $_SESSION['username']?>"><?php print $_SESSION['username']?></h2>
+            <input id="logout" class="button" value="LOGOUT" onclick="logout()"/>
         </header>
         <aside>
             <input id="compose" class="button" value="COMPOSE"/> 
+            <p id="adduser" class="options" onclick="adduserpage()">Add User</p>
             <p id="inbox" class="options" onclick="showinbox()">Inbox</p>
             <p id="outbox" class="options" onclick="showoutbox()">Outbox</p>
-            <?php 
-                //if($_SESSION['username']=='admin'){
-                  //  echo "<a class='options' href='add_user.html'>Add User</a>";
-               // }
-            ?>   
         </aside>
         <section id="messages">
         </section>

@@ -2,10 +2,17 @@ window.onload=function(){
     let compose=document.getElementById('compose');
     let start=1;
     let p=[800,250,600,500,400,700,300,350,200];
-
     getMessages();
     outMessages();
-
+    let logout= document.getElementById('logout');
+    let username = document.getElementById('username').innerHTML;
+    let adduser = document.getElementById('adduser');
+    if(username==='admin'){
+        adduser.style.display='block';
+    }
+    else{
+        adduser.style.display='none';
+    }
     compose.addEventListener('click',function(){
         let random=Math.floor((Math.random()*8)+0);
         let position= p[random];
@@ -20,7 +27,6 @@ function closeMessageBox(id){
 
 
 function createNewMessage(leftpos,number){
-    
     
     let newmessage=document.createElement('DIV');
     newmessage.setAttribute('id','mbox'+number);
@@ -186,10 +192,8 @@ function getContacts(form,number){
             select.style.left=370+'px';
             select.addEventListener('change',function(){
                 let tobox=document.getElementById('to'+number);
-                console.log('2',number);
                 if(tobox.value===""){
                     tobox.value=select.value;
-                    console.log(tobox.value);
                 }
                 else{
                     let newtext=tobox.value;
@@ -219,7 +223,7 @@ function showinbox(){
     let divmess=document.getElementById('messages');
     let divcurr=document.getElementById('currmessage');
     divmess.style.display='block';
-     divcurr.style.display='none';
+    divcurr.style.display='none';
     divout.style.display='none';
 }    
 
@@ -237,4 +241,32 @@ function readupdate(id,value,type){
         xttp.send(params);
     }
     viewMessage(id,type);
+}
+
+function adduserpage(){
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange=function(){
+        if(xhttp.readyState===XMLHttpRequest.DONE && xhttp.status===200){
+            let response= xhttp.response;
+            document.open();
+            document.write(response);
+            document.close();
+        }
+    }
+    xhttp.open('GET','users_pages/add_user.php',true);
+    xhttp.send();
+}
+
+function logout(){
+     let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange=function(){
+        if(xhttp.readyState===XMLHttpRequest.DONE && xhttp.status===200){
+            let response= xhttp.response;
+            document.open();
+            document.write(response);
+            document.close();
+        }
+    }
+    xhttp.open('POST','/logout.php',true);
+    xhttp.send();
 }

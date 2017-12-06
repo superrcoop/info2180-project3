@@ -1,6 +1,10 @@
 <?php
 
 	include('../config.php');
+	session_start();
+	 if($_SESSION['username']===null){
+        echo header('location:index.php');
+    }
 
 	// prepare sql and bund parameters
 	$sql = $pdo->prepare("INSERT INTO users (firstname,lastname,username,password) 
@@ -23,6 +27,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="/css/add_user.css">
+		<script src="/scripts/adduser.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<h1><?php echo $response?></h1>
@@ -38,7 +43,7 @@
 				<td><?php echo $lastname ?></td>
 			</tbody>
 		</table>
-		<a href="/dashboard.php">Back to Messages</a>
-		<a href="logout.php">Logout</a>
+		<a href="" onclick="backtomessages()">Back to Messages</a>
+		<a href="" onclick="logout()">Logout</a>
 	</body>
 </html>

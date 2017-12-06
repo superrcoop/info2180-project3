@@ -26,9 +26,6 @@ for($m=0;$m<count($contacts);$m++){
         $good=$id;
         $id='';
     }
-    if($id===''){
-        array_push($bad,$contacts[$m]);
-    }
     if($good!=='' && $id!==''){
         $good.=','.$id;
         $id='';
@@ -41,12 +38,6 @@ $stmt2=$pdo->query("INSERT messages (recipient_ids,subject,body,sender_id,date_s
 
 if($stmt2->rowCount()>0){
     $message="Your message has been sent";
-    if(count($bad)>0){
-        $message.="The following contacts were not found";
-        foreach($bad as $notfound){
-            $message.= $notfound.'<br/>';
-        } 
-    }
     echo $message;
 }
 ?>

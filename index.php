@@ -1,19 +1,38 @@
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-    </head>
-    <body>
-        <p class="heading">Welcome to CheapoMail</br>Please Sign In</p>
-        <section id="main">
-            <form method="post" action="login.php">
-                <label class="label">Username:</label>
-                </br>
-                <input class="input" type="text" name="username"/></br></br>
-                <label class="label">Password:</label>
-                </br>
-                <input class="input" type="password" name="password"/></br></br>
-                <input class="button" type="submit" name="login" value="LOGIN"/>
-            </form>
-        </section>
-    </body>
-</html>
+    <?php
+        include('config.php');
+        if(isset($_POST['login'])){
+            function test_input($data){
+                $data = trim($data);
+                $data = stripslashes($data);
+                $data = htmlspecialchars($data);
+                return $data;
+            }
+            
+            $username = test_input($_POST["username"]);
+            $password = md5(test_input($_POST["password"]));
+            
+            
+            $sql="SELECT * FROM users WHERE username ='$username' and password ='$password'";
+            $stmt=$pdo->query($sql);
+    
+            if($stmt->rowCount()>0){
+              $row=$stmt->fetch(PDO::FETCH_ASSOC);
+              session_start();
+              $_SESSION['username']=$row['username'];
+              $_SESSION['userid']=$row['id'];
+              $_SESSION['fname']=$row['firstname'];
+              $_SESSION['lname']= $row['lastname']; 
+              
+              echo "<script src='/scripts/calldashboard.js' type='text/javascript'></script>";
+            }
+            
+            else{
+                echo "<script>alert('Your password and email address combinations does not match our records')</script>";
+            }
+        }
+        
+        if($_SESSION['userid']===null){
+            echo "<script src='/scripts/login.js' type='text/javascript'></script>";
+        }
+    ?>

@@ -1,0 +1,25 @@
+<htm>
+<head>
+    <script>
+        window.onload=function(){
+            let xhttp = new XMLHttpRequest();
+            /*xhttp.onload=function(){
+                document.body=this.responseXML.body;
+                document.head.innerHTML=this.responseXML.head.innerHTML;
+                console.log(this.responseXML.head.innerHTML);
+                console.log(document.head.innerHTML);
+            }*/
+            xhttp.onreadystatechange=function(){
+                if(xhttp.readyState===XMLHttpRequest.DONE && xhttp.status===200){
+                    document.body=this.responseXML.body;
+                    document.head.innerHTML=this.responseXML.head.innerHTML;
+                }
+            }
+            xhttp.open('GET','add_user.html');
+            xhttp.responseType='document';
+            xhttp.send();
+        }
+    </script>
+</head>
+
+</html>
