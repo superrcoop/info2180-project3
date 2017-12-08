@@ -1,4 +1,4 @@
- window.onload=function(){
+/* window.onload=function(){
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange=function(){
         if(xhttp.readyState===XMLHttpRequest.DONE && xhttp.status===200){
@@ -10,4 +10,4 @@
     }
     xhttp.open('GET','/dashboard.php',true);
     xhttp.send();
-}
+}*/

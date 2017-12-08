@@ -23,7 +23,7 @@
 }
 
 .login-box-form-section,
-.login-box-social-section-inner {
+.login-box-logo-section-inner {
   padding: 2.5rem;
 }
 
@@ -93,7 +93,7 @@
   box-shadow: 0 1px 2px rgba(10, 10, 10, 0.4);
 }
 
-.login-box-social-headline {
+.login-box-logo-headline {
   display: block;
   margin-bottom: 2.5rem;
   font-size: 1.875rem;
