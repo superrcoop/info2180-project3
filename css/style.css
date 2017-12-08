@@ -1,65 +1,104 @@
+
+
+/* LOGIN 
+=============*/
 #main{
-    width: 400px;
-    background-color: rgba(4,150,255,0.15);
-    left: 450px;
-    border-radius: 5px 5px;
-    height:300px;
-    position: relative; 
-    top: 50px;
-    padding-left: 20px;
-    padding-right:20px;
-    border:solid lightblue;
+    /*padding: 100px;
+    background-image: url('/image/grad.jpg');*/
+
 }
 
-.heading{
-    position: relative;
-    left:470px;
-    top:50px;
-    font-weight: bold;
-    font-size: xx-large;
-    color: white;
-    text-align: center;
+.login-box {
+  box-shadow: 0 2px 4px rgba(10, 10, 10, 0.4);
+  background: #fefefe;
+  border-radius: 0;
+  overflow: hidden;
 }
 
-header{
-    width:400px;
-    background-color:black;
+
+.login-box-title {
+  font-weight: 300;
+  font-size: 1.875rem;
+  margin-bottom: 1.25rem;
 }
 
-.label{
-    color: gold;
-    font-weight: bold;
-    font-size: large;
-    position: relative;
-    top: 50px;
-    left: 50px;
+.login-box-form-section,
+.login-box-social-section-inner {
+  padding: 2.5rem;
 }
 
-.button{
-    background-color: black;
-    border-radius: 15px 15px;
-    width: 150px;
-    height: 35px;
-    color: white;
-    position: relative;
-    left: 120px;
-    top: 70px;
-    border: solid lightblue;
+.login-box-logo-section {
+  background-image: url('/image/mail.png');
+  background-size: cover;
+  background-position: center;
 }
 
-.input{
-    width: 300px;
-    height:30px;
-    border-radius: 5px 5px;
-    position: relative;
-    top: 50px;
-    left: 50px;
-    border:solid lightblue;
+.login-box-input {
+  margin-bottom: 1.25rem;
+  height: 2rem;
+  border: 0;
+  padding-left: 0;
+  box-shadow: none;
+  border-bottom: 1px solid #1779ba;
+  font-weight: 400;
 }
 
-body{
-    background: url('/images/digital.jpg');
-    background-repeat: no-repeat;
-    background-size: 1400px 700px;
-    width:400px;
+.login-box-input:focus {
+  color: #1779ba;
+  transition: 0.2s ease-in-out;
+  box-shadow: none;
+  border: 0;
+  border-bottom: 2px solid #1779ba;
 }
+
+.login-box-submit-button {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 1rem 0;
+  padding: 0.85em 1em;
+  -webkit-appearance: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  font-size: 0.9rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  background-color: #1779ba;
+  color: #fefefe;
+  display: block;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  border-radius: 0;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+[data-whatinput='mouse'] .login-box-submit-button {
+  outline: 0;
+}
+
+.login-box-submit-button:hover, .login-box-submit-button:focus {
+  background-color: #126195;
+  color: #fefefe;
+}
+
+.login-box-submit-button:hover,
+.login-box-submit-button:focus {
+  box-shadow: 0 2px 4px rgba(10, 10, 10, 0.4);
+}
+
+.login-box-submit-button:active {
+  box-shadow: 0 1px 2px rgba(10, 10, 10, 0.4);
+}
+
+.login-box-social-headline {
+  display: block;
+  margin-bottom: 2.5rem;
+  font-size: 1.875rem;
+  color: #fefefe;
+  text-align: center;
+}
+
+
