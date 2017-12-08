@@ -43,7 +43,7 @@
 				<td><?php echo $lastname ?></td>
 			</tbody>
 		</table>
-		<a href="" onclick="backtomessages()">Back to Messages</a>
-		<a href="" onclick="logout()">Logout</a>
+		<p class="aref" onclick="backtomessages()">Back to Messages</p>
+		<p class="aref" onclick="logout()">Logout</p>
 	</body>
 </html>
