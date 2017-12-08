@@ -19,7 +19,7 @@ function testform(){
     	let lname = document.getElementById('lname').value.trim();
     	let uname = document.getElementById('uname').value.trim();
     	let passw = document.getElementById('passw').value;
-    	message="The following errors were found:\n";
+    	let message="The following errors were found:\n";
     	message=errors('Firstname',message,fname);
     	message=errors('Lastname',message,lname);
     	message=errors('Usertname',message,uname);
@@ -52,7 +52,8 @@ function empty(name){
 
 
 function testpassword(pass){
-    patt = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}");
+    let patt = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}/;
+    console.log(patt,pass);
     if(patt.test(pass)===false){
         return false
 	}
@@ -62,7 +63,8 @@ function testpassword(pass){
 }
 
 function messagepass(status,pass){
-    patt = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}");
+    let patt = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}/;
+    console.log(patt,pass);
     if(patt.test(pass)===false){
         status+="The password must contain at Least one Uppercase letter one lowercase letter and a digit";
         return status;
